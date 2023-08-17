@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">Tennis Women’s League</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tennis_women_s_league">Tennis Women’s League</string>
+    <string name="match">Match</string>
+    <string name="news">News</string>
+    <string name="notes">Notes</string>
+    <string name="game">Game</string>
 </resources>
