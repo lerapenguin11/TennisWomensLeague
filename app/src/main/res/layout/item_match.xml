@@ -8,7 +8,6 @@
     android:layout_marginBottom="30dp"
     android:background="@color/background">
 
-
     <TextView
         android:id="@+id/tv_match_date"
         android:layout_width="wrap_content"
@@ -74,16 +73,16 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/poppins_medium"
-                android:text="@string/e_swatek"
+                tools:text="A.Jaber"
                 android:textColor="@color/white"
-                android:textSize="7sp"
+                android:textSize="9sp"
                 app:layout_constraintStart_toStartOf="@+id/icon_avatar_left"
                 app:layout_constraintTop_toBottomOf="@+id/icon_avatar_left" />
 
             <ImageView
-                android:id="@+id/imageView10"
-                android:layout_width="21dp"
-                android:layout_height="11dp"
+                android:id="@+id/iv_flag_left"
+                android:layout_width="22dp"
+                android:layout_height="12dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/tv_name_left"
@@ -110,7 +109,7 @@
                 app:layout_constraintTop_toTopOf="parent">
 
                 <ImageView
-                    android:id="@+id/imageView10"
+                    android:id="@+id/imageView12"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:layout_constraintBottom_toBottomOf="parent"
@@ -126,17 +125,17 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/poppins_medium"
-                android:text="@string/e_swatek"
+                tools:text="A.Jaber"
                 android:textColor="@color/white"
-                android:textSize="7sp"
+                android:textSize="9sp"
                 app:layout_constraintStart_toStartOf="@+id/icon_avatar_right"
                 app:layout_constraintTop_toBottomOf="@+id/icon_avatar_right" />
 
             <ImageView
-                android:id="@+id/imageView11"
-                android:layout_width="21dp"
-                android:layout_height="11dp"
-                app:layout_constraintBottom_toBottomOf="parent"
+                android:id="@+id/iv_flag_right"
+                android:layout_width="22dp"
+                android:layout_height="12dp"
+                app:layout_constraintBottom_toBottomOf="@+id/tv_name_right"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="@+id/tv_name_right"
                 tools:srcCompat="@drawable/flag" />
