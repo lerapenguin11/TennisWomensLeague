@@ -12,4 +12,14 @@ object Constants {
 
         return matchList
     }
+
+    fun getNewsList() : MutableList<NewsModel> {
+        val newsList = mutableListOf<NewsModel>()
+
+        val news1 = NewsModel("Ostrava Open first results", "", "https://miracleballmethod.com/wp-content/uploads/2019/05/Screen-Shot-2019-05-21-at-10.06.00-AM-300x198.png")
+
+        newsList.add(news1)
+
+        return newsList
+    }
 }

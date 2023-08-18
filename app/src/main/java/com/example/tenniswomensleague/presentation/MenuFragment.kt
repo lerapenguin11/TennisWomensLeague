@@ -26,5 +26,6 @@ class MenuFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         binding.navMatch.setOnClickListener { replaceFragmentMainActivity(MatchFragment()) }
+        binding.navNews.setOnClickListener { replaceFragmentMainActivity(NewsFragment()) }
     }
 }
