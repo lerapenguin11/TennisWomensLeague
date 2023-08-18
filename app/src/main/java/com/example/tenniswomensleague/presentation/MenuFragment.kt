@@ -29,5 +29,6 @@ class MenuFragment : Fragment() {
         binding.navMatch.setOnClickListener { replaceFragmentMainActivity(MatchFragment()) }
         binding.navNews.setOnClickListener { replaceFragmentMainActivity(NewsFragment()) }
         binding.navNotes.setOnClickListener { replaceFragmentMainActivity(NotesFragment()) }
+        binding.navGame.setOnClickListener { replaceFragmentMainActivity(InteractiveFragment()) }
     }
 }

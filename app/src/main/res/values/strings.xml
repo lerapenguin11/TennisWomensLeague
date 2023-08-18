@@ -21,4 +21,7 @@
     <string name="_1st_serve_won_2022">1st Serve Won 2022</string>
     <string name="enter_title">Enter title...</string>
     <string name="enter_your_note">Enter your note...</string>
+    <string name="interactive">Interactive</string>
+    <string name="play_and_gain_scores_n_to_make_more_bets">Play and gain scores\n to make more bets!</string>
+    <string name="play_now">Play now!</string>
 </resources>
