@@ -1,14 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingTop="30dp"
+    android:paddingBottom="30dp"
+    android:background="@color/background"
     tools:context=".presentation.notes.NewNoteFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/bt_save_notes"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:background="@drawable/bg_notes_save"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
 
-</FrameLayout>
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:src="@drawable/ic_save"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <EditText
+        android:id="@+id/enter_title_notes"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/bg_notes"
+        android:fontFamily="@font/poppins_medium"
+        android:hint="@string/enter_title"
+        android:paddingStart="20dp"
+        android:textCursorDrawable="@drawable/bg_edit_text_cursor"
+        android:textColor="#BDBDBD"
+        android:textColorHint="#BDBDBD"
+        app:layout_constraintEnd_toStartOf="@+id/bt_save_notes"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/enter_text_notes"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="30dp"
+        android:hint="@string/enter_your_note"
+        android:padding="20dp"
+        android:textCursorDrawable="@drawable/bg_edit_text_cursor"
+        android:fontFamily="@font/poppins_medium"
+        android:textColor="#BDBDBD"
+        android:textColorHint="#BDBDBD"
+        android:gravity="top|left"
+        android:background="@drawable/bg_notes"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/enter_title_notes" />
+</androidx.constraintlayout.widget.ConstraintLayout>
