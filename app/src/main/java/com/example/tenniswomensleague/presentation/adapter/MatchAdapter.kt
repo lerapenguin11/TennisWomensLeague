@@ -6,12 +6,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.tenniswomensleague.R
 import com.example.tenniswomensleague.business.models.MatchModel
+import com.example.tenniswomensleague.presentation.adapter.listener.MatchHistoryListener
 
-class MatchAdapter() : RecyclerView.Adapter<MatchAdapter.MatchViewHolder>(){
+class MatchAdapter(val listener : MatchHistoryListener) : RecyclerView.Adapter<MatchAdapter.MatchViewHolder>(){
 
     private val matchList = mutableListOf<MatchModel>()
 
@@ -39,6 +41,10 @@ class MatchAdapter() : RecyclerView.Adapter<MatchAdapter.MatchViewHolder>(){
             .load(match.flagRight)
             .override(22, 12)
             .into(holder.flagRight)
+
+        holder.btHistory.setOnClickListener {
+            listener.historyMatch(match)
+        }
     }
 
     @SuppressLint("NotifyDataSetChanged")
@@ -54,5 +60,6 @@ class MatchAdapter() : RecyclerView.Adapter<MatchAdapter.MatchViewHolder>(){
         val nameRight : TextView = view.findViewById(R.id.tv_name_right)
         val flagLeft : ImageView = view.findViewById(R.id.iv_flag_left)
         val flagRight : ImageView = view.findViewById(R.id.iv_flag_right)
+        val btHistory : ConstraintLayout = view.findViewById(R.id.bt_match_history)
     }
 }
