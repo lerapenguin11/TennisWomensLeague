@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.example.tenniswomensleague.R
 import com.example.tenniswomensleague.databinding.FragmentMenuBinding
+import com.example.tenniswomensleague.presentation.notes.NotesFragment
 import com.example.tenniswomensleague.presentation.utilits.replaceFragmentMainActivity
 
 class MenuFragment : Fragment() {
@@ -27,5 +28,6 @@ class MenuFragment : Fragment() {
         super.onResume()
         binding.navMatch.setOnClickListener { replaceFragmentMainActivity(MatchFragment()) }
         binding.navNews.setOnClickListener { replaceFragmentMainActivity(NewsFragment()) }
+        binding.navNotes.setOnClickListener { replaceFragmentMainActivity(NotesFragment()) }
     }
 }
