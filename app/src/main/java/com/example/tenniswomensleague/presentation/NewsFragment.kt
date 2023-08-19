@@ -5,12 +5,15 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.tenniswomensleague.databinding.FragmentNewsBinding
 import com.example.tenniswomensleague.presentation.adapter.NewsAdapter
 import com.example.tenniswomensleague.viewModel.NewsViewModel
 import androidx.lifecycle.Observer
+import com.example.tenniswomensleague.R
+import com.example.tenniswomensleague.presentation.utilits.replaceFragmentMainActivity
 
 class NewsFragment : Fragment() {
     private var _binding : FragmentNewsBinding? = null
@@ -31,6 +34,8 @@ class NewsFragment : Fragment() {
         super.onResume()
 
         observeNewsData()
+        binding.ivInfoNews.setOnClickListener { Toast.makeText(context, R.string.info_news, Toast.LENGTH_SHORT).show() }
+        binding.ivBackMenu.setOnClickListener { replaceFragmentMainActivity(MenuFragment()) }
     }
 
     private fun observeNewsData() {

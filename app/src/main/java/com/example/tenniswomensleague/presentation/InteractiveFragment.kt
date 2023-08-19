@@ -5,9 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.example.tenniswomensleague.R
 import com.example.tenniswomensleague.databinding.FragmentInteractiveBinding
 import com.example.tenniswomensleague.databinding.FragmentMenuBinding
+import com.example.tenniswomensleague.presentation.utilits.replaceFragmentMainActivity
 
 class InteractiveFragment : Fragment() {
     private var _binding : FragmentInteractiveBinding? = null
@@ -25,6 +27,8 @@ class InteractiveFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        binding.playNow.setOnClickListener {  }
+        binding.playNow.setOnClickListener { replaceFragmentMainActivity(GameFragment()) }
+        binding.ivBackMenu.setOnClickListener { replaceFragmentMainActivity(MenuFragment()) }
+        binding.ivInfoInteractive.setOnClickListener { Toast.makeText(context, R.string.info_interactive, Toast.LENGTH_SHORT).show() }
     }
 }

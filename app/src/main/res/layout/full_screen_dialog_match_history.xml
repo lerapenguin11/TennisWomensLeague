@@ -6,8 +6,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@color/background"
-    android:paddingStart="37dp"
-    android:paddingEnd="37dp">
+    android:paddingStart="30dp"
+    android:paddingEnd="30dp">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
@@ -41,7 +41,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
-            android:id="@+id/iv_info_match"
+            android:id="@+id/iv_info_match_history"
             android:layout_width="26dp"
             android:layout_height="26dp"
             android:src="@drawable/ic_info"
@@ -274,6 +274,7 @@
                     android:id="@+id/iv_left_win"
                     android:layout_width="20dp"
                     android:layout_height="15dp"
+                    android:visibility="invisible"
                     android:layout_gravity="center_vertical"
                     android:layout_weight="1"
                     app:srcCompat="@drawable/win" />
@@ -384,7 +385,7 @@
             android:id="@+id/view2"
             android:layout_width="1dp"
             android:layout_height="0dp"
-            android:layout_marginStart="7dp"
+            android:layout_marginStart="5dp"
             android:background="#515151"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/constraintLayout5"
@@ -395,7 +396,7 @@
             android:layout_width="1dp"
             android:layout_height="0dp"
             android:background="#515151"
-            android:layout_marginStart="7dp"
+            android:layout_marginStart="5dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/constraintLayout6"
             app:layout_constraintTop_toTopOf="parent" />
@@ -588,7 +589,7 @@
             android:id="@+id/constraintLayout6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="7dp"
+            android:layout_marginStart="0dp"
             app:layout_constraintStart_toEndOf="@+id/view2"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout4">
 
@@ -725,7 +726,7 @@
             android:id="@+id/constraintLayout7"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="3dp"
+            android:layout_marginStart="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/view3"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout4">
@@ -777,6 +778,7 @@
                 android:paddingTop="10dp"
                 android:textColor="@color/white"
                 android:textSize="11sp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_right_height"
                 tools:text="Right-Handed" />
@@ -789,6 +791,7 @@
                 android:paddingTop="10dp"
                 android:textColor="@color/white"
                 android:textSize="11sp"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tv_right_plays"
                 tools:text="David Ringot" />

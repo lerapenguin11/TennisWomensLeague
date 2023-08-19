@@ -30,7 +30,6 @@ class MainActivity : AppCompatActivity() {
         replaceFragmentMainActivity(MenuFragment())
     }
 
-
     @SuppressLint("ObsoleteSdkInt")
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     fun setStatusBarGradiant(activity: Activity) {

@@ -5,9 +5,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.viewpager2.widget.ViewPager2
+import com.example.tenniswomensleague.R
 import com.example.tenniswomensleague.databinding.FragmentNotesBinding
+import com.example.tenniswomensleague.presentation.MenuFragment
 import com.example.tenniswomensleague.presentation.adapter.NotesPagerAdapter
+import com.example.tenniswomensleague.presentation.utilits.replaceFragmentMainActivity
 import com.google.android.material.tabs.TabLayout
 
 class NotesFragment : Fragment() {
@@ -27,6 +31,8 @@ class NotesFragment : Fragment() {
 
         binding.tabLayout.addTab(binding.tabLayout.newTab().setText("New note"))
         binding.tabLayout.addTab(binding.tabLayout.newTab().setText("List of notes"))
+        binding.ivInfoNotes.setOnClickListener { Toast.makeText(context, R.string.info_notes, Toast.LENGTH_LONG).show() }
+        binding.ivBackMenu.setOnClickListener { replaceFragmentMainActivity(MenuFragment()) }
 
         binding.viewPager2.adapter = adapter
 

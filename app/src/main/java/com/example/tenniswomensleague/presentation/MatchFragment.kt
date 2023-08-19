@@ -11,13 +11,16 @@ import android.view.Window
 import android.view.*
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.bumptech.glide.Glide
 import com.example.tenniswomensleague.business.models.MatchModel
 import com.example.tenniswomensleague.databinding.FragmentMatchBinding
 import com.example.tenniswomensleague.presentation.adapter.MatchAdapter
 import com.example.tenniswomensleague.presentation.adapter.listener.MatchHistoryListener
+import com.example.tenniswomensleague.presentation.utilits.replaceFragmentMainActivity
 import com.example.tenniswomensleague.viewModel.MatchViewModel
 
 class MatchFragment : Fragment(), MatchHistoryListener {
@@ -40,6 +43,8 @@ class MatchFragment : Fragment(), MatchHistoryListener {
         super.onResume()
 
         observeMatchData()
+        binding.ivInfoMatch.setOnClickListener { Toast.makeText(context, com.example.tenniswomensleague.R.string.info_match, Toast.LENGTH_SHORT).show() }
+        binding.ivBackMenu.setOnClickListener { replaceFragmentMainActivity(MenuFragment()) }
     }
 
     private fun observeMatchData() {
@@ -62,6 +67,10 @@ class MatchFragment : Fragment(), MatchHistoryListener {
 
         val nameLeft : TextView = dialog.findViewById(com.example.tenniswomensleague.R.id.tv_name_left)
         val nameRight : TextView = dialog.findViewById(com.example.tenniswomensleague.R.id.tv_name_right)
+        val resultLeftOne : TextView = dialog.findViewById(com.example.tenniswomensleague.R.id.tv_result_left_one)
+        val resultLeftTwo : TextView = dialog.findViewById(com.example.tenniswomensleague.R.id.tv_result_left_second)
+        val resultRightOne : TextView = dialog.findViewById(com.example.tenniswomensleague.R.id.tv_result_right_one)
+        val resultRightTwo : TextView = dialog.findViewById(com.example.tenniswomensleague.R.id.tv_result_right_second)
         val nameLeftResult : TextView = dialog.findViewById(com.example.tenniswomensleague.R.id.tv_name_left_history)
         val nameRightResult : TextView = dialog.findViewById(com.example.tenniswomensleague.R.id.tv_name_right_history)
         val nameLeftMetrics : TextView = dialog.findViewById(com.example.tenniswomensleague.R.id.tv_name_left_metrics)
@@ -90,11 +99,75 @@ class MatchFragment : Fragment(), MatchHistoryListener {
         val flagRight : ImageView = dialog.findViewById(com.example.tenniswomensleague.R.id.iv_flag_right)
         val flagLeftHistory : ImageView = dialog.findViewById(com.example.tenniswomensleague.R.id.iv_flag_left_history)
         val flagRightHistory : ImageView = dialog.findViewById(com.example.tenniswomensleague.R.id.iv_flag_right_history)
+        val btBack : ImageView = dialog.findViewById(com.example.tenniswomensleague.R.id.imageView2)
+        val info_history : ImageView = dialog.findViewById(com.example.tenniswomensleague.R.id.iv_info_match_history)
+        val iconWinLeft : ImageView = dialog.findViewById(com.example.tenniswomensleague.R.id.iv_left_win)
+        val iconWinRight : ImageView = dialog.findViewById(com.example.tenniswomensleague.R.id.iv_right_win)
+
+        val resultLeft = lastMatch.resultLeftTwo + lastMatch.resultLeftTwo
+        val resultRight = lastMatch.resultRightOne + lastMatch.resultLeftTwo
+
+        if(resultLeft > resultRight){
+            iconWinLeft.visibility = View.VISIBLE
+        } else {
+            iconWinRight.visibility = View.VISIBLE
+        }
+
+        btBack.setOnClickListener { dialog.cancel() }
+        info_history.setOnClickListener { Toast.makeText(context, com.example.tenniswomensleague.R.string.info_history,
+        Toast.LENGTH_SHORT).show() }
+
+        rightWtaSinglesRankings.text = lastMatch.rightWtaSinglesRankings
+        rightHeight.text = lastMatch.rightHeight
+        rightPlays.text = lastMatch.rightPlays
+        rightCoach.text = lastMatch.rightCoach
+        rightMatchesPlayed.text = lastMatch.rightMatchesPlayed
+        rightAces.text = lastMatch.rightAces
+        rightServiceGamesWon.text = lastMatch.rightServiceGamesWon
+        rightReturnGamesWon.text = lastMatch.rightReturnGamesWon
+        right1stServeWon.text = lastMatch.right1stServeWon
+        rightAge.text = lastMatch.rightAge
 
         nameLeft.text = lastMatch.nameLeft
         nameRight.text = lastMatch.nameRight
+        resultLeftOne.text = lastMatch.resultLeftOne.toString()
+        resultLeftTwo.text = lastMatch.resultLeftTwo.toString()
+        resultRightOne.text = lastMatch.resultRightOne.toString()
+        resultRightTwo.text = lastMatch.resultRightTwo.toString()
+        nameLeftResult.text = lastMatch.nameLeftResult
+        nameRightResult.text = lastMatch.nameRightResult
+        nameLeftMetrics.text = lastMatch.nameLeftMetrics
+        nameRightMetrics.text = lastMatch.nameRightMetrics
+        left1stServeWon.text = lastMatch.left1stServeWon
+        leftAces.text = lastMatch.leftAces
+        leftAge.text = lastMatch.leftAge
+        leftCoach.text = lastMatch.leftCoach
+        leftHeight.text = lastMatch.leftHeight
+        leftWtaSinglesRankings.text = lastMatch.leftWtaSinglesRankings
+        leftPlays.text = lastMatch.leftPlays
+        leftMatchesPlayed.text = lastMatch.leftMatchesPlayed
+        leftServiceGamesWon.text = lastMatch.leftServiceGamesWon
+        leftFeturnGamesWon.text = lastMatch.leftFeturnGamesWon
 
+        Glide.with(requireContext())
+            .load(lastMatch.flagLeft)
+            .override(22, 12)
+            .into(flagLeft)
 
+        Glide.with(requireContext())
+            .load(lastMatch.flagRight)
+            .override(22, 12)
+            .into(flagRight)
+
+        Glide.with(requireContext())
+            .load(lastMatch.flagLeftHistory)
+            .override(21, 11)
+            .into(flagLeftHistory)
+
+        Glide.with(requireContext())
+            .load(lastMatch.flagRightHistory)
+            .override(21, 11)
+            .into(flagRightHistory)
 
         dialog.show()
     }
