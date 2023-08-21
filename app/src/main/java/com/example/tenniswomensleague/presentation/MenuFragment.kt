@@ -5,10 +5,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.tenniswomensleague.R
 import com.example.tenniswomensleague.databinding.FragmentMenuBinding
 import com.example.tenniswomensleague.presentation.notes.NotesFragment
-import com.example.tenniswomensleague.presentation.utilits.replaceFragmentMainActivity
+import com.example.tenniswomensleague.presentation.utilits.replaceFragmentMainATennisActivity
 
 class MenuFragment : Fragment() {
     private var _binding : FragmentMenuBinding? = null
@@ -26,9 +25,17 @@ class MenuFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        binding.navMatch.setOnClickListener { replaceFragmentMainActivity(MatchFragment()) }
-        binding.navNews.setOnClickListener { replaceFragmentMainActivity(NewsFragment()) }
-        binding.navNotes.setOnClickListener { replaceFragmentMainActivity(NotesFragment()) }
-        binding.navGame.setOnClickListener { replaceFragmentMainActivity(InteractiveFragment()) }
+        binding.navMatch.setOnClickListener {
+            replaceFragmentMainATennisActivity(MatchFragment())
+        }
+        binding.navNews.setOnClickListener {
+            replaceFragmentMainATennisActivity(NewsFragment())
+        }
+        binding.navNotes.setOnClickListener {
+            replaceFragmentMainATennisActivity(NotesFragment())
+        }
+        binding.navGame.setOnClickListener {
+            replaceFragmentMainATennisActivity(InteractiveFragment())
+        }
     }
 }

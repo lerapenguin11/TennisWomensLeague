@@ -20,7 +20,7 @@ import com.example.tenniswomensleague.business.models.MatchModel
 import com.example.tenniswomensleague.databinding.FragmentMatchBinding
 import com.example.tenniswomensleague.presentation.adapter.MatchAdapter
 import com.example.tenniswomensleague.presentation.adapter.listener.MatchHistoryListener
-import com.example.tenniswomensleague.presentation.utilits.replaceFragmentMainActivity
+import com.example.tenniswomensleague.presentation.utilits.replaceFragmentMainATennisActivity
 import com.example.tenniswomensleague.viewModel.MatchViewModel
 
 class MatchFragment : Fragment(), MatchHistoryListener {
@@ -44,7 +44,7 @@ class MatchFragment : Fragment(), MatchHistoryListener {
 
         observeMatchData()
         binding.ivInfoMatch.setOnClickListener { Toast.makeText(context, com.example.tenniswomensleague.R.string.info_match, Toast.LENGTH_SHORT).show() }
-        binding.ivBackMenu.setOnClickListener { replaceFragmentMainActivity(MenuFragment()) }
+        binding.ivBackMenu.setOnClickListener { replaceFragmentMainATennisActivity(MenuFragment()) }
     }
 
     private fun observeMatchData() {

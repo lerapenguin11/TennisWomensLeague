@@ -11,9 +11,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.tenniswomensleague.databinding.FragmentNewsBinding
 import com.example.tenniswomensleague.presentation.adapter.NewsAdapter
 import com.example.tenniswomensleague.viewModel.NewsViewModel
-import androidx.lifecycle.Observer
 import com.example.tenniswomensleague.R
-import com.example.tenniswomensleague.presentation.utilits.replaceFragmentMainActivity
+import com.example.tenniswomensleague.presentation.utilits.replaceFragmentMainATennisActivity
 
 class NewsFragment : Fragment() {
     private var _binding : FragmentNewsBinding? = null
@@ -35,7 +34,7 @@ class NewsFragment : Fragment() {
 
         observeNewsData()
         binding.ivInfoNews.setOnClickListener { Toast.makeText(context, R.string.info_news, Toast.LENGTH_SHORT).show() }
-        binding.ivBackMenu.setOnClickListener { replaceFragmentMainActivity(MenuFragment()) }
+        binding.ivBackMenu.setOnClickListener { replaceFragmentMainATennisActivity(MenuFragment()) }
     }
 
     private fun observeNewsData() {

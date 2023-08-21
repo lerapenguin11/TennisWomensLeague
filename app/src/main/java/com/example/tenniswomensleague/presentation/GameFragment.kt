@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import com.example.tenniswomensleague.R
 import com.example.tenniswomensleague.databinding.FragmentGameBinding
-import com.example.tenniswomensleague.presentation.utilits.replaceFragmentMainActivity
+import com.example.tenniswomensleague.presentation.utilits.replaceFragmentMainATennisActivity
 import java.util.*
 
 class GameFragment : Fragment() {
@@ -25,17 +25,19 @@ class GameFragment : Fragment() {
 
         _binding = FragmentGameBinding.inflate(inflater, container, false)
 
-        ballPosition = Random().nextInt(3)
 
-        binding.cup1.setOnClickListener { checkAnswer(0) }
-        binding.cup2.setOnClickListener { checkAnswer(1) }
-        binding.cup3.setOnClickListener { checkAnswer(2) }
 
         return binding.root
     }
 
     override fun onResume() {
         super.onResume()
+
+        ballPosition = Random().nextInt(3)
+
+        binding.cup1.setOnClickListener { checkAnswer(0) }
+        binding.cup2.setOnClickListener { checkAnswer(1) }
+        binding.cup3.setOnClickListener { checkAnswer(2) }
 
         onClick()
     }
@@ -68,7 +70,7 @@ class GameFragment : Fragment() {
         }
 
         binding.ivBackMenu.setOnClickListener {
-            replaceFragmentMainActivity(InteractiveFragment())
+            replaceFragmentMainATennisActivity(InteractiveFragment())
             binding.btStartGame.visibility = View.VISIBLE
         }
 

@@ -9,10 +9,10 @@ import android.os.Bundle
 import android.view.Window
 import android.view.WindowManager
 import androidx.core.content.ContextCompat
-import com.example.tenniswomensleague.APP_MAIN_ACTIVITY
+import com.example.tenniswomensleague.APP_MAIN_ACTIVITY_TENNIS
 import com.example.tenniswomensleague.R
 import com.example.tenniswomensleague.databinding.ActivityMainBinding
-import com.example.tenniswomensleague.presentation.utilits.replaceFragmentMainActivity
+import com.example.tenniswomensleague.presentation.utilits.replaceFragmentMainATennisActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,18 +21,18 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        APP_MAIN_ACTIVITY = this
+        APP_MAIN_ACTIVITY_TENNIS = this
     }
 
     override fun onStart() {
         super.onStart()
-        setStatusBarGradiant(this)
-        replaceFragmentMainActivity(MenuFragment())
+        setStatusBarMainActivityGradiant(this)
+        replaceFragmentMainATennisActivity(MenuFragment())
     }
 
     @SuppressLint("ObsoleteSdkInt")
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    fun setStatusBarGradiant(activity: Activity) {
+    fun setStatusBarMainActivityGradiant(activity: Activity) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             val window: Window = activity.window
             val background = ContextCompat.getDrawable(activity, R.color.background)
